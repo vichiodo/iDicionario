@@ -7,13 +7,13 @@
 //
 
 #import "MackenzieAppDelegate.h"
-#import "LetraAViewController.h"
+#import "DicionarioViewController.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    LetraAViewController *viewController = [[LetraAViewController alloc]
+    DicionarioViewController *viewController = [[DicionarioViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
     

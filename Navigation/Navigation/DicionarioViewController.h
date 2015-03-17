@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SingletonView.h"
 
-@interface LetraAViewController : UIViewController
+@interface DicionarioViewController : UIViewController
+
+@property SingletonView *sv;
+@property UIImageView *imagem;
+@property UIButton *nome;
 
 @end
