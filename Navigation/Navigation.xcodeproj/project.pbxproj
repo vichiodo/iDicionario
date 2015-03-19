@@ -21,6 +21,9 @@
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		27156F7D18BA89430053A99C /* DicionarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* DicionarioViewController.m */; };
 		B36D12301AB75DF50099178E /* SingletonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D122F1AB75DF50099178E /* SingletonView.m */; };
+		B36D12331ABA65360099178E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D12321ABA65360099178E /* TableViewController.m */; };
+		B36D12361ABA65620099178E /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D12351ABA65620099178E /* TabBarController.m */; };
+		B36D12391ABA78FC0099178E /* EditarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D12381ABA78FC0099178E /* EditarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		27156F7C18BA89430053A99C /* DicionarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicionarioViewController.m; sourceTree = "<group>"; };
 		B36D122E1AB75DF50099178E /* SingletonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonView.h; sourceTree = "<group>"; };
 		B36D122F1AB75DF50099178E /* SingletonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonView.m; sourceTree = "<group>"; };
+		B36D12311ABA65360099178E /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		B36D12321ABA65360099178E /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		B36D12341ABA65620099178E /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		B36D12351ABA65620099178E /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		B36D12371ABA78FC0099178E /* EditarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditarViewController.h; sourceTree = "<group>"; };
+		B36D12381ABA78FC0099178E /* EditarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,12 @@
 				27156F7C18BA89430053A99C /* DicionarioViewController.m */,
 				B36D122E1AB75DF50099178E /* SingletonView.h */,
 				B36D122F1AB75DF50099178E /* SingletonView.m */,
+				B36D12311ABA65360099178E /* TableViewController.h */,
+				B36D12321ABA65360099178E /* TableViewController.m */,
+				B36D12341ABA65620099178E /* TabBarController.h */,
+				B36D12351ABA65620099178E /* TabBarController.m */,
+				B36D12371ABA78FC0099178E /* EditarViewController.h */,
+				B36D12381ABA78FC0099178E /* EditarViewController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -199,7 +214,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Mackenzie;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Vinicius Miana";
 				TargetAttributes = {
 					27156F6318B76AF50053A99C = {
@@ -253,6 +268,9 @@
 				B36D12301AB75DF50099178E /* SingletonView.m in Sources */,
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
 				27156F7D18BA89430053A99C /* DicionarioViewController.m in Sources */,
+				B36D12361ABA65620099178E /* TabBarController.m in Sources */,
+				B36D12391ABA78FC0099178E /* EditarViewController.m in Sources */,
+				B36D12331ABA65360099178E /* TableViewController.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +317,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -338,7 +355,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -396,7 +412,6 @@
 		27156F7918B76AF50053A99C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Navigation.app/Navigation";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -419,7 +434,6 @@
 		27156F7A18B76AF50053A99C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Navigation.app/Navigation";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

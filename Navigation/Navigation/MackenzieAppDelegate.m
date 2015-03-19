@@ -8,21 +8,20 @@
 
 #import "MackenzieAppDelegate.h"
 #import "DicionarioViewController.h"
+#import "TabBarController.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    DicionarioViewController *viewController = [[DicionarioViewController alloc]
-                                           initWithNibName:nil
-                                           bundle:nil];
+    TabBarController *tabBar = [[TabBarController alloc] init];
     
     
-    self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+//    self.navigationController = [[UINavigationController alloc]
+//                                 initWithRootViewController:viewController];
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
+    self.window.rootViewController = tabBar;
 
 
     

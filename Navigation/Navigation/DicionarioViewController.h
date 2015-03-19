@@ -13,6 +13,7 @@
 
 @property SingletonView *sv;
 @property UIImageView *imagem;
-@property UIButton *nome;
+@property UILabel *nome;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end
