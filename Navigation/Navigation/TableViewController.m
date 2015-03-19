@@ -22,9 +22,11 @@
     
     sv = [SingletonView instance];
     
+//    tableView = [UITableView alloc] initWithFrame:[CGRectMake(self., <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)]
+    
     tableView.delegate = self;
     tableView.dataSource = self;
-    [self.view addSubview:tableView];
+//    [self.view addSubview:tableView];
 }
 
 - (void)didReceiveMemoryWarning {

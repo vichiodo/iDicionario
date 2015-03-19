@@ -19,31 +19,20 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     NSString* sub = [NSString stringWithFormat:@"%c",[[_sv.palavras objectAtIndex:_sv.linha] characterAtIndex:0]];
-    self.title = sub;
+    self.navigationItem.title = sub;
     
     UIBarButtonItem *next = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
     
     UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem=back;
-    self.navigationController.toolbarHidden=NO;
     
+    
+    self.navigationController.toolbarHidden=NO;
     UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editar:)];
     NSArray *items = [NSArray arrayWithObjects: flexiableItem, item1, flexiableItem, nil];
     self.toolbarItems = items;
-    
-
-//    
-//    toolBar = [[UIToolbar alloc] init];
-//    toolBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
-//    NSMutableArray *items = [[NSMutableArray alloc] init];
-//    [items addObject:[[[UIBarButtonItem alloc] initWith] autorelease]];
-//    [toolBar setItems:items animated:NO];
-//    [items release];
-//    [self.view addSubview:toolBar];
-//    [toolBar release];
-
 }
 
 
@@ -65,7 +54,7 @@
     
     [self.view addSubview:nome];
     [self.view addSubview:imagem];
-    }
+}
 
 
 
@@ -88,14 +77,16 @@
         _sv.linha = 0;
     }
     
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.navigationController pushViewController:pro animated:NO];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
+        
+    }];
     
-    [self.navigationController pushViewController:pro
-                                         animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)back:(id)sender {
-//    UINavigationController *navigation = [[UINavigationController alloc]init];
-//    NSMutableArray *views = self.navigationController;
     
     DicionarioViewController *ant = [[DicionarioViewController alloc]
                                      initWithNibName:nil
@@ -106,12 +97,13 @@
         _sv.linha = 25;
     }
     
-//    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
-
-    [self.navigationController pushViewController:ant animated:YES];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.navigationController pushViewController:ant animated:NO];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO];
+        
+    }];
     
-    
-//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 

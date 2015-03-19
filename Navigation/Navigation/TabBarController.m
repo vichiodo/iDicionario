@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     DicionarioViewController *viewController = [[DicionarioViewController alloc]
                                                 initWithNibName:nil
                                                 bundle:nil];
@@ -27,7 +27,6 @@
     
     NSArray *views = [[NSArray alloc] initWithObjects:nav, table, nil];
     [self setViewControllers:views];
-    
     nav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"A, B, C" image:nil tag:1];
     table.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Lista" image:nil tag:2];
 }
