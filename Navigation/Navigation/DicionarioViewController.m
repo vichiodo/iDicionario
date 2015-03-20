@@ -43,6 +43,7 @@
 
 
     nome.text =[_sv.palavras objectAtIndex:_sv.linha];
+//    imagem.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [[_sv.palavras objectAtIndex:_sv.linha] characterAtIndex:0]]];
     [UIView animateWithDuration:1.5 animations:^{
         imagem.alpha = 0;
     }];

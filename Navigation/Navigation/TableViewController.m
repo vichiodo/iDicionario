@@ -56,7 +56,7 @@
     
     [cell.textLabel setText:[NSString stringWithFormat:@"%c",[[sv.palavras objectAtIndex:row] characterAtIndex:0]]];
     [cell.detailTextLabel setText: [sv.palavras objectAtIndex:row]];
-//    [cell.imageView setImage:[UIImage imageNamed:[sv.imagens objectAtIndex:row]]];
+//    [cell.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [[sv.palavras objectAtIndex:row] characterAtIndex:0]]]];
     return cell;
 }
 

@@ -22,8 +22,7 @@ static SingletonView *instancia = nil;
     self = [super init];
     if (self) {
         _linha = 0;
-        _palavras = [[NSArray alloc ]initWithObjects:@"Amarelinha", @"Batata Quente", @"Corre Cotia", @"Detetive", @"Elefantinho Colorido", @"Forca", @"Gincana", @"Hex", @"Ioiô", @"João Roubou Pão", @"Kit de Magica", @"Liga os Pontos", @"Mimica", @"Nós Quatro", @"O Mestre Mando", @"Pega-Pega", @"Queimada", @"Roda Pião", @"Serra, Serra, Serrador", @"Taco", @"Uno", @"Vareta", @"War", @"Xadrez", @"Y", @"ZigZag", nil];
-        _imagens = [[NSArray  alloc]initWithObjects:@"ImagemA", @"ImagemB", @"ImagemC", nil];
+        _palavras = [[NSArray alloc ]initWithObjects:@"Amarelinha", @"Batata Quente", @"Corre Cotia", @"Detetive", @"Elefantinho Colorido", @"Forca", @"Gincana", @"Hex", @"Ioiô", @"Jogo da velha", @"Kit de Magica", @"Liga os Pontos", @"Mimica", @"Nós Quatro", @"O Mestre Mando", @"Pega-Pega", @"Queimada", @"Roda Pião", @"Serra, Serra, Serrador", @"Taco", @"Uno", @"Vareta", @"War", @"Xadrez", @"Y", @"ZigZag", nil];
     }
     
     return self;
