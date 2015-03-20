@@ -10,7 +10,7 @@
 #import "EditarViewController.h"
 
 @implementation DicionarioViewController
-@synthesize imagem, nome, toolBar;
+@synthesize imagem, nome, toolBar, imagemAtual;
 
 
 -(void) viewDidLoad {
@@ -33,18 +33,17 @@
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editar:)];
     NSArray *items = [NSArray arrayWithObjects: flexiableItem, item1, flexiableItem, nil];
     self.toolbarItems = items;
-}
-
-
--(void)viewWillAppear:(BOOL)animated{
+    
+    
     imagem = [[UIImageView alloc]initWithFrame:CGRectMake(90, 150, 130, 130)];
-    nome = [[UILabel alloc]initWithFrame:CGRectMake(100, 300, 200, 50)];
-
-
-
+    nome = [[UILabel alloc]initWithFrame:CGRectMake(90, 300, 150, 50)];
+    
+    
+    
     nome.text =[_sv.palavras objectAtIndex:_sv.linha];
-//    imagem.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [[_sv.palavras objectAtIndex:_sv.linha] characterAtIndex:0]]];
-    [UIView animateWithDuration:1.5 animations:^{
+    nome.textAlignment = NSTextAlignmentCenter;
+    imagem.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png",[[_sv.palavras objectAtIndex:_sv.linha] characterAtIndex:0]]];
+    [UIView animateWithDuration:2.0 animations:^{
         imagem.alpha = 0;
     }];
     
@@ -58,10 +57,19 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated{
+    nome.text =[_sv.palavras objectAtIndex:_sv.linha];
+    nome.textAlignment = NSTextAlignmentCenter;
+    imagem.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png",[[_sv.palavras objectAtIndex:_sv.linha] characterAtIndex:0]]];
+    [UIView animateWithDuration:2.0 animations:^{
+        imagem.alpha = 0;
+    }];
+}
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
-    [imagem setBackgroundColor:[UIColor redColor]];
-    [UIView animateWithDuration:1.5 animations:^{
+    [UIView animateWithDuration:2.0 animations:^{
         imagem.alpha = 1;
     }];
 
@@ -116,14 +124,32 @@
 
 -(void)zoom:(UILongPressGestureRecognizer *)sender{
     if (sender.state == UIGestureRecognizerStateBegan) {
-        [UIView animateWithDuration:0.3 animations:^{
-            imagem.transform = CGAffineTransformMakeScale(1.5f, 1.5f);
+        [UIView animateWithDuration:0.2 animations:^{
+            imagem.transform = CGAffineTransformMakeScale(2.0f, 2.0f);
         }];
     }
     
     if (sender.state == UIGestureRecognizerStateEnded) {
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             imagem.transform = CGAffineTransformMakeScale(1.f, 1.f);
+        }];
+    }
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint ponto = [touch locationInView:self.view];
+    if (CGRectContainsPoint(imagem.frame, ponto)) {
+        imagemAtual = YES;
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch= [touches anyObject];
+    CGPoint local=[touch locationInView:self.view];
+    if(imagemAtual){
+        [UIView animateWithDuration:0 animations:^{
+                imagem.transform=CGAffineTransformMakeTranslation(local.x-imagem.center.x, local.y-imagem.center.y);
         }];
     }
 }

@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
+#import "Banco.h"
 
 @interface SingletonView : NSObject
 
 +(SingletonView*)instance;
 
-@property (strong, nonatomic) NSArray *palavras;
-@property (strong, nonatomic) NSArray *imagens;
+@property RLMRealm *realm;
+@property (strong, nonatomic) NSMutableArray *palavras;
+@property (strong, nonatomic) NSMutableArray *imagens;
 @property int linha;
 
 @end

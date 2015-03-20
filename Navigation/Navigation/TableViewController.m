@@ -21,12 +21,13 @@
     [super viewDidLoad];
     
     sv = [SingletonView instance];
+
     
-//    tableView = [UITableView alloc] initWithFrame:[CGRectMake(self., <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)]
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-70)];
     
     tableView.delegate = self;
     tableView.dataSource = self;
-//    [self.view addSubview:tableView];
+    [self.view addSubview:tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +57,7 @@
     
     [cell.textLabel setText:[NSString stringWithFormat:@"%c",[[sv.palavras objectAtIndex:row] characterAtIndex:0]]];
     [cell.detailTextLabel setText: [sv.palavras objectAtIndex:row]];
-//    [cell.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [[sv.palavras objectAtIndex:row] characterAtIndex:0]]]];
+    [cell.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%c.png",[[sv.palavras objectAtIndex:row] characterAtIndex:0]]]];
     return cell;
 }
 

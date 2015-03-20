@@ -14,6 +14,7 @@
 @property SingletonView *sv;
 @property UIImageView *imagem;
 @property UILabel *nome;
+@property BOOL imagemAtual;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end

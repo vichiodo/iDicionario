@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface EditarViewController : UIViewController
-
+@property UITextField *editar;
 @end

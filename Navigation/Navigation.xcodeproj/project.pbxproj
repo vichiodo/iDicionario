@@ -20,6 +20,9 @@
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
 		27156F7D18BA89430053A99C /* DicionarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* DicionarioViewController.m */; };
+		B303F0CC1ABC94DF000879FA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B303F0CB1ABC94DF000879FA /* Realm.framework */; };
+		B303F0CE1ABC9520000879FA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B303F0CD1ABC9520000879FA /* libc++.dylib */; };
+		B303F0D31ABC95AD000879FA /* Banco.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F0D21ABC95AD000879FA /* Banco.m */; };
 		B36D12301AB75DF50099178E /* SingletonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D122F1AB75DF50099178E /* SingletonView.m */; };
 		B36D12331ABA65360099178E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D12321ABA65360099178E /* TableViewController.m */; };
 		B36D12361ABA65620099178E /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36D12351ABA65620099178E /* TabBarController.m */; };
@@ -55,6 +58,10 @@
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
 		27156F7B18BA89430053A99C /* DicionarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicionarioViewController.h; sourceTree = "<group>"; };
 		27156F7C18BA89430053A99C /* DicionarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicionarioViewController.m; sourceTree = "<group>"; };
+		B303F0CB1ABC94DF000879FA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		B303F0CD1ABC9520000879FA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		B303F0D11ABC95AD000879FA /* Banco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banco.h; sourceTree = "<group>"; };
+		B303F0D21ABC95AD000879FA /* Banco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banco.m; sourceTree = "<group>"; };
 		B36D122E1AB75DF50099178E /* SingletonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonView.h; sourceTree = "<group>"; };
 		B36D122F1AB75DF50099178E /* SingletonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonView.m; sourceTree = "<group>"; };
 		B36D12311ABA65360099178E /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -70,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B303F0CE1ABC9520000879FA /* libc++.dylib in Frameworks */,
+				B303F0CC1ABC94DF000879FA /* Realm.framework in Frameworks */,
 				27156F4F18B76AF50053A99C /* CoreGraphics.framework in Frameworks */,
 				27156F5118B76AF50053A99C /* UIKit.framework in Frameworks */,
 				27156F4D18B76AF50053A99C /* Foundation.framework in Frameworks */,
@@ -111,6 +120,8 @@
 		27156F4B18B76AF50053A99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B303F0CD1ABC9520000879FA /* libc++.dylib */,
+				B303F0CB1ABC94DF000879FA /* Realm.framework */,
 				27156F4C18B76AF50053A99C /* Foundation.framework */,
 				27156F4E18B76AF50053A99C /* CoreGraphics.framework */,
 				27156F5018B76AF50053A99C /* UIKit.framework */,
@@ -122,6 +133,7 @@
 		27156F5218B76AF50053A99C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				B303F0D01ABC9555000879FA /* Entidade */,
 				27156F5B18B76AF50053A99C /* MackenzieAppDelegate.h */,
 				27156F5C18B76AF50053A99C /* MackenzieAppDelegate.m */,
 				27156F5E18B76AF50053A99C /* Images.xcassets */,
@@ -167,6 +179,15 @@
 				27156F6E18B76AF50053A99C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B303F0D01ABC9555000879FA /* Entidade */ = {
+			isa = PBXGroup;
+			children = (
+				B303F0D11ABC95AD000879FA /* Banco.h */,
+				B303F0D21ABC95AD000879FA /* Banco.m */,
+			);
+			name = Entidade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +289,7 @@
 				B36D12301AB75DF50099178E /* SingletonView.m in Sources */,
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
 				27156F7D18BA89430053A99C /* DicionarioViewController.m in Sources */,
+				B303F0D31ABC95AD000879FA /* Banco.m in Sources */,
 				B36D12361ABA65620099178E /* TabBarController.m in Sources */,
 				B36D12391ABA78FC0099178E /* EditarViewController.m in Sources */,
 				B36D12331ABA65360099178E /* TableViewController.m in Sources */,
@@ -388,6 +410,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Navigation/Navigation-Prefix.pch";
 				INFOPLIST_FILE = "Navigation/Navigation-Info.plist";
@@ -401,6 +427,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Navigation/Navigation-Prefix.pch";
 				INFOPLIST_FILE = "Navigation/Navigation-Info.plist";
