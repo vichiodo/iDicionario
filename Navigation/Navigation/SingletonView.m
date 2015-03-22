@@ -9,49 +9,70 @@
 #import "SingletonView.h"
 
 @implementation SingletonView
+@synthesize realm, linha, palavras;
 
 static SingletonView *instancia = nil;
+
 
 +(SingletonView *)instance{
     if(!instancia){
         instancia = [[super alloc]init];
+        
     }
     return instancia;
 }
 -(instancetype) init {
     self = [super init];
     if (self) {
-        _linha = 0;
-        _palavras = [[NSMutableArray alloc ]initWithObjects:@"Amarelinha", @"Batata Quente", @"Corre Cotia", @"Detetive", @"Elefantinho Colorido", @"Forca", @"Gincana", @"Hex", @"Ioiô", @"Jogo da velha", @"Kit de Magica", @"Liga os Pontos", @"Mimica", @"Nós Quatro", @"O Mestre Mando", @"Pega-Pega", @"Queimada", @"Roda Pião", @"Serra, Serra, Serrador", @"Taco", @"Uno", @"Vareta", @"War", @"Xadrez", @"Y", @"ZigZag", nil];
+        linha = 0;
+        [self initBanco];
     }
     
     return self;
 }
 
+
+//------------------------------------- DEVIA INICIALIZAR O BANCO
 -(void) initBanco{
-    _palavras = [[NSArray alloc ]initWithObjects:@"Amarelinha", @"Batata Quente", @"Corre Cotia", @"Detetive", @"Elefantinho Colorido", @"Forca", @"Gincana", @"Hex", @"Ioiô", @"Jogo da velha", @"Kit de Magica", @"Liga os Pontos", @"Mimica", @"Nós Quatro", @"O Mestre Mando", @"Pega-Pega", @"Queimada", @"Roda Pião", @"Serra, Serra, Serrador", @"Taco", @"Uno", @"Vareta", @"War", @"Xadrez", @"Y", @"ZigZag", nil];
+    realm = [RLMRealm defaultRealm];
+    palavras = [[NSMutableArray alloc ]initWithObjects:@"Amarelinha", @"Batata Quente", @"Corre Cotia", @"Detetive", @"Elefantinho Colorido", @"Forca", @"Gincana", @"Hex", @"Ioiô", @"Jogo da velha", @"Kit de Magica", @"Liga os Pontos", @"Mimica", @"Nós Quatro", @"O Mestre Mando", @"Pega-Pega", @"Queimada", @"Roda Pião", @"Serra, Serra, Serrador", @"Taco", @"Uno", @"Vareta", @"War", @"Xadrez", @"Y", @"ZigZag", nil];
     
-    
-    _realm = [RLMRealm defaultRealm];
-    
-    
-    
-    for (int i =0; i<[_palavras count]; i++) {
+    for (int i =0; i<palavras.count; i++) {
         Banco *bd = [[Banco alloc]init];
     
-        bd.palavra = [_palavras firstObject];
+        bd.palavra = [palavras objectAtIndex:i];
+        bd.imagem = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%c",[[palavras objectAtIndex:i] characterAtIndex:0]]];
+        
+        
+        [realm beginWriteTransaction];
     
-        [_realm beginWriteTransaction];
+        [realm addObject:bd];
     
-        [_realm addObject:bd];
-    
-        [_realm commitWriteTransaction];
+        [realm commitWriteTransaction];
     }
-    //fim for
     
-    RLMResults *resultadosDaBusca;
-    
-    resultadosDaBusca = [Banco objectsWhere:@"palavra='alguma coisa'"];
+}
+
+//---------------------------------------------- DEVIA RETORNAR O OBJETO NO BANCO, MAS ACHO QUE NAO ESTA
+-(Banco *)buscarNaLinha:(NSString *)palavra{
+    RLMResults *resultados = [Banco objectsWhere:@"palavra=%@",palavra];
+    for(Banco *resultado in resultados){
+            return resultado;
+    }
+    return nil;
+}
+
+
+//--------------- DEVIA MUDAR A PALAVRA NO BANCO, MAS COMO NAO ESTA PEGANDO O BANCO, ACHO QUE NAO MUDA TBM
+-(void)alterarPalavra:(NSString *)palavra{
+    RLMResults *resultados = [Banco objectsWhere:@"palavra=%@",palavra];
+    for(Banco *resultado in resultados){
+        [realm beginWriteTransaction];
+        
+        resultado.palavra = palavra;
+        
+        [realm commitWriteTransaction];
+    }
 }
 
 @end

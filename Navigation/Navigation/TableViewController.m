@@ -22,30 +22,23 @@
     
     sv = [SingletonView instance];
 
-    
+//---------------------------- CRIANDO A TABELA
     tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-70)];
-    
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+    [super didReceiveMemoryWarning];}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [sv.palavras count];
 }
 

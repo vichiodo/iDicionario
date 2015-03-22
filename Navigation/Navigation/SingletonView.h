@@ -16,7 +16,9 @@
 
 @property RLMRealm *realm;
 @property (strong, nonatomic) NSMutableArray *palavras;
-@property (strong, nonatomic) NSMutableArray *imagens;
 @property int linha;
+
+-(void)alterarPalavra:(NSString *)palavra;
+-(Banco *)buscarNaLinha:(NSString *)palavra;
 
 @end

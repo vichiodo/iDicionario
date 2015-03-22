@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditarViewController : UIViewController
+@interface EditarViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property UITextField *editar;
+
+
 @end
